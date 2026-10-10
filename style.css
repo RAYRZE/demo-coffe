@@ -36,7 +36,9 @@ a { color: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, button:focus-visible { outline: 3px solid #b98545; outline-offset: 4px; }
 ::selection { color: var(--paper); background: var(--coffee-light); }
-
+.bundar {
+  border-radius: 50%;
+}
 .skip-link {
   position: fixed;
   z-index: 1000;
