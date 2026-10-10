@@ -67,6 +67,10 @@
           <h1 id="hero-title">Sastro's <span>Coffee</span></h1>
           <p class="hero-lead">Kopi enak, suasana nyaman, di jantung Jogja.</p>
           <p class="hero-description">Tempat singgah untuk menikmati kopi favorit, hidangan lezat, dan momen santai bersama orang-orang terdekat.</p>
+          <div class="business-status" id="business-status" data-open-hour="17" data-close-hour="24" aria-live="polite">
+            <span class="status-indicator" aria-hidden="true"></span>
+            <span class="status-copy"><strong id="status-title">Memeriksa jam operasional…</strong><small id="status-detail">Setiap hari · 17.00–00.00 WIB</small></span>
+          </div>
           <div class="hero-actions">
             <a class="button button-primary" href="#menu">Jelajahi menu <span aria-hidden="true">↓</span></a>
             <a class="button button-ghost" href="#lokasi">Lihat lokasi <span aria-hidden="true">↗</span></a>
@@ -90,52 +94,442 @@
       <div class="section-heading">
         <div>
           <p class="section-kicker">Dibuat untuk dinikmati</p>
-          <h2 id="menu-title">Menu <span>Andalan</span></h2>
+          <h2 id="menu-title">Menu <span>Sastro's</span></h2>
         </div>
-        <p class="section-intro">Pilihan favorit untuk menemani obrolan, kerja, atau waktu istirahatmu.</p>
+        <p class="section-intro">Jelajahi pilihan kopi, minuman, makanan utama, dan camilan dari menu resmi Sastro's Coffee.</p>
       </div>
 
-      <div class="menu-grid">
-        <article class="menu-card">
-          <div class="menu-image-wrap">
-            <img src="picture/es-kopi-sastro.webp" alt="Es kopi susu berwarna karamel disajikan dalam gelas bening di meja kayu Sastro's Coffee" width="1123" height="1401" loading="lazy" decoding="async">
-            <span class="menu-number">01</span>
+      <div class="menu-filters" role="group" aria-label="Filter kategori menu">
+        <button class="menu-filter is-active" type="button" data-filter="semua" aria-pressed="true">Semua Menu</button>
+        <button class="menu-filter" type="button" data-filter="signature" aria-pressed="false">Signature</button>
+        <button class="menu-filter" type="button" data-filter="coffee" aria-pressed="false">Coffee</button>
+        <button class="menu-filter" type="button" data-filter="espresso" aria-pressed="false">Espresso Based</button>
+        <button class="menu-filter" type="button" data-filter="noncoffee" aria-pressed="false">Non-Coffee</button>
+        <button class="menu-filter" type="button" data-filter="tea" aria-pressed="false">Tea &amp; Others</button>
+        <button class="menu-filter" type="button" data-filter="main" aria-pressed="false">Main Course</button>
+        <button class="menu-filter" type="button" data-filter="snacks" aria-pressed="false">Snacks &amp; Bites</button>
+      </div>
+      <p class="menu-result-count" id="menu-result-count" aria-live="polite">Menampilkan semua 38 menu</p>
+      <div class="menu-grid" id="menu-grid">
+        <article class="menu-card menu-item-card" data-category="coffee">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/tubtuk.webp" alt="tubruk" loading="lazy">
           </div>
-          <div class="menu-card-copy"><h3>Es Kopi Sastro</h3><p>Favorit dingin untuk menemani hari.</p></div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Manual Brew</p>
+            <div class="menu-item-heading"><h3>Tubruk</h3><span class="menu-item-price">Rp16.000</span></div>
+            
+          </div>
         </article>
 
-        <article class="menu-card">
-          <div class="menu-image-wrap">
-            <img src="picture/frappuccino-hazelnut.webp" alt="Minuman latte dingin dengan taburan bubuk cokelat di atas busa susu dalam gelas bening" width="1122" height="1402" loading="lazy" decoding="async">
-            <span class="menu-number">02</span>
+        <article class="menu-card menu-item-card" data-category="coffee">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/ice coffe.webp" alt="Kopi V60 Sastro's Coffee" loading="lazy">
           </div>
-          <div class="menu-card-copy"><h3>Frappuccino Hazelnut</h3><p>Rasa lembut dengan sentuhan manis.</p></div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Manual Brew</p>
+            <div class="menu-item-heading"><h3>V60</h3><span class="menu-item-price">Rp20.000</span></div>
+            
+          </div>
         </article>
 
-        <article class="menu-card">
-          <div class="menu-image-wrap">
-            <img src="picture/nasi-goreng.webp" alt="Sepiring nasi goreng Indonesia dengan telur mata sapi, irisan mentimun, dan tomat" width="1123" height="1401" loading="lazy" decoding="async">
-            <span class="menu-number">03</span>
+        <article class="menu-card menu-item-card" data-category="coffee">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/ice coffe.webp" alt="Kopi Japanese Sastro's Coffee" loading="lazy">
           </div>
-          <div class="menu-card-copy"><h3>Nasi Goreng</h3><p>Hidangan gurih untuk mengisi tenaga.</p></div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Manual Brew</p>
+            <div class="menu-item-heading"><h3>Japanese</h3><span class="menu-item-price">Rp20.000</span></div>
+            
+          </div>
         </article>
 
-        <article class="menu-card">
-          <div class="menu-image-wrap">
-            <img src="picture/coffee-beer.webp" alt="Botol coffee beer dan gelas berisi minuman kopi berwarna gelap di meja kafe dengan pencahayaan hangat" width="1123" height="1400" loading="lazy" decoding="async">
-            <span class="menu-number">04</span>
+        <article class="menu-card menu-item-card" data-category="coffee">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/kopi-vietnam-drip.webp" alt="Vietnam Drip Sastro's Coffee" loading="lazy">
           </div>
-          <div class="menu-card-copy"><h3>Coffee Beer</h3><p>Alternatif rasa kopi yang unik.</p></div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Manual Brew</p>
+            <div class="menu-item-heading"><h3>Vietnam Drip</h3><span class="menu-item-price">Rp20.000</span></div>
+            
+          </div>
         </article>
 
-        <article class="menu-card">
-          <div class="menu-image-wrap">
-            <img src="picture/kopi-vietnam-drip.webp" alt="Kopi Vietnam drip dengan alat seduh logam di samping secangkir kopi dan tanaman kecil di meja kayu" width="1123" height="1401" loading="lazy" decoding="async">
-            <span class="menu-number">05</span>
+        <article class="menu-card menu-item-card" data-category="espresso">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/tubtuk.webp" alt="Espresso Sastro's Coffee" loading="lazy">
           </div>
-          <div class="menu-card-copy"><h3>Kopi Vietnam Drip</h3><p>Nikmati seduhan kopi dengan cara klasik.</p></div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Espresso Based</p>
+            <div class="menu-item-heading"><h3>Espresso</h3><span class="menu-item-price">Rp16.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="espresso">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/tubtuk.webp" alt="Americano Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Espresso Based</p>
+            <div class="menu-item-heading"><h3>Americano</h3><span class="menu-item-price">Rp20.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="espresso">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/tubtuk.webp" alt="Long Black Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Espresso Based</p>
+            <div class="menu-item-heading"><h3>Long Black</h3><span class="menu-item-price">Rp20.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="espresso">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/affogate.webp" alt="Affogato Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Espresso Based</p>
+            <div class="menu-item-heading"><h3>Affogato</h3><span class="menu-item-price">Rp22.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="espresso">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/late.webp" alt="Cappuccino dan Latte Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Espresso Based</p>
+            <div class="menu-item-heading"><h3>Cappuccino / Latte</h3><span class="menu-item-price">Rp20.000–22.000</span></div>
+            <p class="menu-item-detail">Pilihan rasa: Vanilla, Caramel, Hazelnut, Almond.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="espresso">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/mocancim.webp" alt="Mochaccino Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Espresso Based</p>
+            <div class="menu-item-heading"><h3>Mochaccino</h3><span class="menu-item-price">Rp20.000–22.000</span></div>
+            <p class="menu-item-detail">Pilihan rasa: Vanilla, Caramel, Hazelnut, Almond.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="espresso">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/frappuccino-hazelnut.webp" alt="Frappuccino Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Espresso Based</p>
+            <div class="menu-item-heading"><h3>Frappuccino</h3><span class="menu-item-price">Rp22.000</span></div>
+            <p class="menu-item-detail">Pilihan rasa: Vanilla, Caramel, Hazelnut, Almond.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="espresso">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/shot.jpg" alt="Tambahan Espresso Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Additional</p>
+            <div class="menu-item-heading"><h3>Espresso (Add Shot)</h3><span class="menu-item-price">Rp10.000</span></div>
+            <p class="menu-item-detail">Tambahan espresso.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="signature">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="" alt="Sastro's Series Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Signature</p>
+            <div class="menu-item-heading"><h3>Sastro's Series</h3><span class="menu-item-price">Rp22.000</span></div>
+            <p class="menu-item-detail">Pilihan rasa: Aren, Butterscotch, Pandan, Klepon.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="signature">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/kopsu.webp" alt="KopSus Trilogi Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Signature</p>
+            <div class="menu-item-heading"><h3>KopSus Trilogi</h3><span class="menu-item-price">Rp20.000–22.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="noncoffee">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/coklat.webp" alt="Chocolate Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Milk Based</p>
+            <div class="menu-item-heading"><h3>Chocolate</h3><span class="menu-item-price">Rp22.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="noncoffee">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/macha.webp" alt="Matcha Cheese Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Milk Based</p>
+            <div class="menu-item-heading"><h3>Matcha Cheese</h3><span class="menu-item-price">Rp22.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="noncoffee">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/red velvet.webp" alt="Red Velvet Cheese Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Milk Based</p>
+            <div class="menu-item-heading"><h3>Red Velvet Cheese</h3><span class="menu-item-price">Rp22.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="noncoffee">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/taro.webp" alt="Taro Cheese Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Milk Based</p>
+            <div class="menu-item-heading"><h3>Taro Cheese</h3><span class="menu-item-price">Rp22.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="tea">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/teh.webp" alt="Tea Original Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Tea &amp; Others</p>
+            <div class="menu-item-heading"><h3>Tea (Original)</h3><span class="menu-item-price">Rp8.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="tea">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/lemontea.webp" alt="Lemon Tea Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Tea &amp; Others</p>
+            <div class="menu-item-heading"><h3>Lemon Tea</h3><span class="menu-item-price">Rp16.000–18.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="tea">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/lychee.webp" alt="Lychee Tea Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Tea &amp; Others</p>
+            <div class="menu-item-heading"><h3>Lychee Tea</h3><span class="menu-item-price">Rp20.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="tea">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/air minera.webp" alt="Mineral Water Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Tea &amp; Others</p>
+            <div class="menu-item-heading"><h3>Mineral Water</h3><span class="menu-item-price">Rp4.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="main">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/nasi goreng.webp" alt="Nasi Goreng Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Main Course</p>
+            <div class="menu-item-heading"><h3>Nasi Goreng</h3><span class="menu-item-price">Rp20.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="main">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/nasi goreng.webp" alt="Magelangan Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Main Course</p>
+            <div class="menu-item-heading"><h3>Magelangan</h3><span class="menu-item-price">Rp20.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="main">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/nyemek.webp" alt="Mie Nyemek Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Main Course</p>
+            <div class="menu-item-heading"><h3>Mie Nyemek</h3><span class="menu-item-price">Rp18.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="main">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/mie.webp" alt="Mie Instan Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Main Course</p>
+            <div class="menu-item-heading"><h3>Mie Instan</h3><span class="menu-item-price">Rp10.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="main">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="" alt="Tambahan Nasi Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Add-ons</p>
+            <div class="menu-item-heading"><h3>Nasi</h3><span class="menu-item-price">Rp5.000</span></div>
+            <p class="menu-item-detail">Tambahan untuk hidangan.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="main">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="" alt="Tambahan Telur Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Add-ons</p>
+            <div class="menu-item-heading"><h3>Telur</h3><span class="menu-item-price">Rp5.000</span></div>
+            <p class="menu-item-detail">Tambahan untuk hidangan.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/mendoan'.webp" alt="Mendoan Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Mendoan</h3><span class="menu-item-price">Rp15.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/jamur.webp" alt="Jamur Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Jamur</h3><span class="menu-item-price">Rp15.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/cireng.webp" alt="Cireng Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Cireng</h3><span class="menu-item-price">Rp14.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/risol.webp" alt="Risol Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Risol</h3><span class="menu-item-price">Rp13.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/Screenshot From 2026-10-10 13-57-38.webp" alt="Kentang Goreng Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Kentang Goreng</h3><span class="menu-item-price">Rp15.000 / 17.000</span></div>
+            <p class="menu-item-detail">Varian: Original, Balado.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/singkong.webp" alt="Singkong Goreng Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Singkong Goreng</h3><span class="menu-item-price">Rp15.000 / 17.000 / 19.000</span></div>
+            <p class="menu-item-detail">Varian: Original, Balado, Keju.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/pisang .webp" alt="Pisang Goreng Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Pisang Goreng</h3><span class="menu-item-price">Rp18.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/pisang bakar'.webp" alt="Pisang Bakar Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Pisang Bakar</h3><span class="menu-item-price">Rp18.000</span></div>
+            
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/roti.webp" alt="Roti Bakar Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Roti Bakar</h3><span class="menu-item-price">Rp15.000 / 20.000</span></div>
+            <p class="menu-item-detail">Varian: Original, Mozzarella.</p>
+          </div>
+        </article>
+
+        <article class="menu-card menu-item-card" data-category="snacks">
+          <div class="menu-image-wrap menu-image-placeholder" aria-hidden="true">
+            <img src="picture/sosis.webp" alt="Sosis Bakar Sastro's Coffee" loading="lazy">
+          </div>
+          <div class="menu-card-copy">
+            <p class="menu-item-category">Snacks &amp; Bites</p>
+            <div class="menu-item-heading"><h3>Sosis Bakar</h3><span class="menu-item-price">Rp20.000</span></div>
+            
+          </div>
         </article>
       </div>
+      <p class="menu-price-note">Harga mengikuti daftar menu yang diberikan pemilik. Foto produk akan ditambahkan kemudian.</p>
     </section>
 
     <!-- Lokasi -->
